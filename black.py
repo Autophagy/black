@@ -2792,6 +2792,8 @@ def gen_python_files_in_dir(
     """Generate all files under `path` whose paths are not excluded by the
     `exclude` regex, but are included by the `include` regex.
     """
+    print(path)
+    print("...")
 
     for child in path.iterdir():
         searchable_path = str(child)
@@ -2809,6 +2811,7 @@ def gen_python_files_in_dir(
             and include.search(searchable_path)
             and not exclude.search(searchable_path)
         ):
+            print(searchable_path)
             yield child
 
 
