@@ -2796,7 +2796,7 @@ def gen_python_files_in_dir(
     print("...")
 
     for child in path.iterdir():
-        searchable_path = str(child)
+        searchable_path = str(child.as_posix())
         if Path(child.parts[0]).is_dir():
             searchable_path = "/" + searchable_path
         if child.is_dir():
