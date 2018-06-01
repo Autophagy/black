@@ -2812,10 +2812,7 @@ def gen_python_files_in_dir(
                 child.is_file()
                 and include_match
                 and len(include_match.group()) > 0
-                and (
-                    not exclude.search(searchable_path)
-                    or len(exclude_match.group()) == 0
-                )
+                and (not exclude_match or len(exclude_match.group()) == 0)
             ):
                 yield child
 
